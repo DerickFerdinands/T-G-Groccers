@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="PurchaseMainPane" prefHeight="971.0" prefWidth="1865.0" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PurchaseManagementFormController">
+   <children>
+      <Separator layoutX="807.0" layoutY="294.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
+      <JFXButton fx:id="btnAddToCart" layoutX="799.0" layoutY="360.0" onAction="#addTocartOnAction" prefHeight="34.0" prefWidth="136.0" style="-fx-background-color: #3A827B;" text="Add To Cart" textFill="#2c2828">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnDeleteFromCart" layoutX="952.0" layoutY="359.0" onAction="#removeFromCartOnAction" prefHeight="34.0" prefWidth="136.0" style="-fx-background-color: #C75450;" text="Remove Item" textFill="#282424">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="126.0" fitWidth="200.0" layoutX="81.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/istockphoto-1136422297-612x612.jpg" />
+         </image>
+      </ImageView>
+      <JFXComboBox fx:id="cmbPaymentMethod" layoutX="464.0" layoutY="889.0" prefHeight="25.0" prefWidth="200.0" promptText="Payment Method" />
+      <JFXComboBox fx:id="cmbPaymentStatus" layoutX="681.0" layoutY="889.0" prefHeight="25.0" prefWidth="200.0" promptText="Payment Status" />
+      <JFXButton fx:id="btnPurchase" layoutX="895.0" layoutY="884.0" onAction="#purchaseItemsOnAction" prefHeight="34.0" prefWidth="200.0" style="-fx-background-color: #499C54;" text="PURCHASE" textFill="#282424">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="lblTotal" layoutX="64.0" layoutY="886.0" text="Total:" textFill="#c75450">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="1191.0" layoutY="106.0" prefHeight="821.0" prefWidth="654.0">
+         <content>
+            <AnchorPane fx:id="PurchaseScrollerAnchorPane" prefHeight="820.0" prefWidth="648.0">
+               <children>
+                  <AnchorPane layoutX="9.0" layoutY="860.0" prefHeight="68.0" prefWidth="740.0" style="-fx-background-color: #00796B; -fx-background-radius: 10;">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="6.0" layoutY="19.0" prefHeight="27.0" prefWidth="107.0">
+                           <children>
+                              <Label style="-fx-font-size: 12; -fx-text-fill: #070707;" text="P-001" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="234.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="125.0" layoutY="19.0" prefHeight="27.0" prefWidth="93.0">
+                           <children>
+                              <Label style="-fx-font-size: 12; -fx-text-fill: #070707;" text="V-0001" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="354.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="239.0" layoutY="19.0" prefHeight="27.0" prefWidth="93.0">
+                           <children>
+                              <Label style="-fx-font-size: 12; -fx-text-fill: #070707;" text="20,000/=" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="464.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="344.0" layoutY="19.0" prefHeight="27.0" prefWidth="77.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="64.0" style="-fx-font-size: 12; -fx-text-fill: #070707;" text="03/15/2022" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="558.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="440.0" layoutY="20.0" prefHeight="27.0" prefWidth="58.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="33.0" style="-fx-font-size: 12; -fx-text-fill: #070707;" text="03:59" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="629.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="511.0" layoutY="21.0" prefHeight="27.0" prefWidth="58.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="35.0" style="-fx-font-size: 12; -fx-text-fill: #070707;" text="Cash" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="692.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <JFXButton layoutX="655.0" layoutY="19.0" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: #1C1C1C;" text="PAID" textFill="#b8b8b8">
+                           <font>
+                              <Font name="Tw Cen MT Condensed Extra Bold" size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <HBox alignment="CENTER" layoutX="580.0" layoutY="21.0" prefHeight="27.0" prefWidth="58.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="45.0" style="-fx-font-size: 12; -fx-text-fill: #070707;" text="Pending" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="771.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="9.0" layoutY="930.0" prefHeight="68.0" prefWidth="740.0" style="-fx-background-color: #00796B; -fx-background-radius: 10;">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="6.0" layoutY="19.0" prefHeight="27.0" prefWidth="107.0">
+                           <children>
+                              <Label style="-fx-font-size: 12; -fx-text-fill: #070707;" text="P-001" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="234.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="125.0" layoutY="19.0" prefHeight="27.0" prefWidth="93.0">
+                           <children>
+                              <Label style="-fx-font-size: 12; -fx-text-fill: #070707;" text="V-0001" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="354.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="239.0" layoutY="19.0" prefHeight="27.0" prefWidth="93.0">
+                           <children>
+                              <Label style="-fx-font-size: 12; -fx-text-fill: #070707;" text="20,000/=" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="464.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="344.0" layoutY="19.0" prefHeight="27.0" prefWidth="77.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="64.0" style="-fx-font-size: 12; -fx-text-fill: #070707;" text="03/15/2022" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="558.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="440.0" layoutY="20.0" prefHeight="27.0" prefWidth="58.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="33.0" style="-fx-font-size: 12; -fx-text-fill: #070707;" text="03:59" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="629.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="511.0" layoutY="21.0" prefHeight="27.0" prefWidth="58.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="35.0" style="-fx-font-size: 12; -fx-text-fill: #070707;" text="Cash" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="692.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <JFXButton layoutX="655.0" layoutY="19.0" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: #1C1C1C;" text="PAID" textFill="#b8b8b8">
+                           <font>
+                              <Font name="Tw Cen MT Condensed Extra Bold" size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <HBox alignment="CENTER" layoutX="580.0" layoutY="21.0" prefHeight="27.0" prefWidth="58.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="45.0" style="-fx-font-size: 12; -fx-text-fill: #070707;" text="Pending" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="771.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="9.0" layoutY="1000.0" prefHeight="68.0" prefWidth="740.0" style="-fx-background-color: #00796B; -fx-background-radius: 10;">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="6.0" layoutY="19.0" prefHeight="27.0" prefWidth="107.0">
+                           <children>
+                              <Label style="-fx-font-size: 12; -fx-text-fill: #070707;" text="P-001" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="234.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="125.0" layoutY="19.0" prefHeight="27.0" prefWidth="93.0">
+                           <children>
+                              <Label style="-fx-font-size: 12; -fx-text-fill: #070707;" text="V-0001" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="354.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="239.0" layoutY="19.0" prefHeight="27.0" prefWidth="93.0">
+                           <children>
+                              <Label style="-fx-font-size: 12; -fx-text-fill: #070707;" text="20,000/=" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="464.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="344.0" layoutY="19.0" prefHeight="27.0" prefWidth="77.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="64.0" style="-fx-font-size: 12; -fx-text-fill: #070707;" text="03/15/2022" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="558.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="440.0" layoutY="20.0" prefHeight="27.0" prefWidth="58.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="33.0" style="-fx-font-size: 12; -fx-text-fill: #070707;" text="03:59" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="629.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="511.0" layoutY="21.0" prefHeight="27.0" prefWidth="58.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="35.0" style="-fx-font-size: 12; -fx-text-fill: #070707;" text="Cash" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="692.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <JFXButton layoutX="655.0" layoutY="19.0" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: #1C1C1C;" text="PAID" textFill="#b8b8b8">
+                           <font>
+                              <Font name="Tw Cen MT Condensed Extra Bold" size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <HBox alignment="CENTER" layoutX="580.0" layoutY="21.0" prefHeight="27.0" prefWidth="58.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="45.0" style="-fx-font-size: 12; -fx-text-fill: #070707;" text="Pending" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="771.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="9.0" layoutY="1070.0" prefHeight="68.0" prefWidth="740.0" style="-fx-background-color: #00796B; -fx-background-radius: 10;">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="6.0" layoutY="19.0" prefHeight="27.0" prefWidth="107.0">
+                           <children>
+                              <Label style="-fx-font-size: 12; -fx-text-fill: #070707;" text="P-001" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="234.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="125.0" layoutY="19.0" prefHeight="27.0" prefWidth="93.0">
+                           <children>
+                              <Label style="-fx-font-size: 12; -fx-text-fill: #070707;" text="V-0001" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="354.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="239.0" layoutY="19.0" prefHeight="27.0" prefWidth="93.0">
+                           <children>
+                              <Label style="-fx-font-size: 12; -fx-text-fill: #070707;" text="20,000/=" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="464.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="344.0" layoutY="19.0" prefHeight="27.0" prefWidth="77.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="64.0" style="-fx-font-size: 12; -fx-text-fill: #070707;" text="03/15/2022" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="558.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="440.0" layoutY="20.0" prefHeight="27.0" prefWidth="58.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="33.0" style="-fx-font-size: 12; -fx-text-fill: #070707;" text="03:59" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="629.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="511.0" layoutY="21.0" prefHeight="27.0" prefWidth="58.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="35.0" style="-fx-font-size: 12; -fx-text-fill: #070707;" text="Cash" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="692.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <JFXButton layoutX="655.0" layoutY="19.0" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: #1C1C1C;" text="PAID" textFill="#b8b8b8">
+                           <font>
+                              <Font name="Tw Cen MT Condensed Extra Bold" size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <HBox alignment="CENTER" layoutX="580.0" layoutY="21.0" prefHeight="27.0" prefWidth="58.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="45.0" style="-fx-font-size: 12; -fx-text-fill: #070707;" text="Pending" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="771.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+         </content>
+      </ScrollPane>
+      <AnchorPane fx:id="IdPane" layoutX="76.0" layoutY="107.0" prefHeight="42.0" prefWidth="322.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Vendor Id*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="cmbVendorID" editable="true" layoutX="10.0" layoutY="5.0" prefHeight="28.0" prefWidth="313.0" promptText="200416803088" unFocusColor="#4d4d4d11" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane1" layoutX="410.0" layoutY="107.0" prefHeight="42.0" prefWidth="322.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Conact Number*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="cmbVendorMobile" editable="true" layoutX="10.0" layoutY="5.0" prefHeight="28.0" prefWidth="313.0" promptText="0773276983" unFocusColor="#4d4d4d11" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="txtVendorName" layoutX="745.0" layoutY="107.0" prefHeight="42.0" prefWidth="340.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtCusID" editable="false" layoutX="13.0" layoutY="8.0" prefHeight="28.0" prefWidth="339.0" promptText="Derick Andrew Ferdinands" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Name Or Company*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane3" layoutX="319.0" layoutY="225.0" prefHeight="42.0" prefWidth="322.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Item Code*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="cmbItemCode" editable="true" layoutX="10.0" layoutY="5.0" prefHeight="28.0" prefWidth="313.0" promptText="200416803088" unFocusColor="#4d4d4d11" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane21" layoutX="658.0" layoutY="225.0" prefHeight="42.0" prefWidth="340.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtName" editable="false" layoutX="13.0" layoutY="8.0" prefHeight="28.0" prefWidth="418.0" promptText="Derick Andrew Ferdinands" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Item Name / Description*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane211" layoutX="323.0" layoutY="296.0" prefHeight="42.0" prefWidth="189.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtQtyOnHand" editable="false" layoutX="13.0" layoutY="8.0" prefHeight="28.0" prefWidth="181.0" promptText="Derick Andrew Ferdinands" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Qty On Hand*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane2111" layoutX="544.0" layoutY="295.0" prefHeight="42.0" prefWidth="213.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtBuyingPrice" editable="false" layoutX="13.0" layoutY="8.0" prefHeight="28.0" prefWidth="196.0" promptText="Derick Andrew Ferdinands" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Buying Price*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane21111" layoutX="862.0" layoutY="294.0" prefHeight="42.0" prefWidth="213.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtBuyingQty" layoutX="13.0" layoutY="8.0" onKeyReleased="#ValidateBuyingQty" prefHeight="28.0" prefWidth="213.0" promptText="Derick Andrew Ferdinands" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Buying Qty*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Separator layoutX="91.0" layoutY="172.0" prefHeight="7.0" prefWidth="968.0" />
+      <AnchorPane fx:id="IdPane5" layoutX="35.0" layoutY="23.0" prefHeight="42.0" prefWidth="969.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #E8E6E8;" styleClass="textPane">
+         <children>
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="1101.0">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="185.0" text="ADD PURCHASE" textFill="#544f4f">
+                     <font>
+                        <Font name="Tw Cen MT Condensed Extra Bold" size="31.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane51" layoutX="1180.0" layoutY="22.0" prefHeight="42.0" prefWidth="677.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #E8E6E8;" styleClass="textPane">
+         <children>
+            <HBox alignment="CENTER" layoutX="-14.0" prefHeight="42.0" prefWidth="692.0">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="375.0" text="UPDATE PURCHASES ON CREDIT" textFill="#544f4f">
+                     <font>
+                        <Font name="Tw Cen MT Condensed Extra Bold" size="31.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <Separator layoutX="1143.0" layoutY="94.0" orientation="VERTICAL" prefHeight="821.0" prefWidth="1.0" />
+      <TableView fx:id="tblPurchaseItems" layoutX="76.0" layoutY="441.0" prefHeight="417.0" prefWidth="1019.0" stylesheets="@CSS/table.css">
+         <columns>
+            <TableColumn fx:id="colItem" prefWidth="146.0" text="Item Code" />
+            <TableColumn fx:id="colDesc" prefWidth="233.99996948242188" text="Name / Description" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="175.0" text="Unit Price" />
+            <TableColumn fx:id="colQty" prefWidth="165.0" text="Qty" />
+            <TableColumn fx:id="colCost" prefWidth="172.0" text="Cost" />
+            <TableColumn fx:id="colOption" prefWidth="126.0" text="---" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="971.0" prefWidth="1865.0" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ViewDiscountsFormController">
+   <children>
+      <AnchorPane layoutX="387.0" layoutY="19.0" prefHeight="952.0" prefWidth="1122.0" style="-fx-border-color: Black; -fx-border-radius: 5;">
+         <children>
+            <Label layoutX="426.0" layoutY="-21.0" style="-fx-background-color: White;" text="VIEW ALL DISCOUNTS">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="173.0" layoutY="48.0" prefHeight="43.0" prefWidth="797.0" style="-fx-border-color: Black; -fx-border-radius: 5;">
+               <children>
+                  <JFXTextField fx:id="txtSalesSearch" focusColor="#405aa800" layoutX="14.0" layoutY="4.0" onKeyReleased="#SearchDIscounts" prefHeight="49.0" prefWidth="780.0" promptText="SEARCH" unFocusColor="#4d4d4d00" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="167.0" layoutY="37.0" style="-fx-background-color: White;" text="SEARCH*">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="27.0">
+                     <image>
+                        <Image url="@../Assets/outline_search_black_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tblDiscounts" layoutX="526.0" layoutY="136.0" prefHeight="793.0" prefWidth="856.0" stylesheets="@CSS/table.css">
+         <columns>
+            <TableColumn fx:id="colOrderID" prefWidth="132.00003051757812" text="Order ID" />
+            <TableColumn fx:id="colNIC" prefWidth="163.0" text="Customer NIC" />
+            <TableColumn fx:id="colTotalPrice" prefWidth="158.0" text="Total Price" />
+            <TableColumn fx:id="colDiscountGiven" prefWidth="139.0" text="Discount Given" />
+            <TableColumn fx:id="colDiscountedPrice" prefWidth="128.0" text="Discounted Price" />
+            <TableColumn fx:id="colOption" prefWidth="134.0" text="---" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

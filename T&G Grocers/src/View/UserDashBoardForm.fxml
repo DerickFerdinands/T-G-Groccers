@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="MainContext" onKeyReleased="#checkShortcutKeys" onMouseClicked="#hideOnClick" onMouseEntered="#hideOnClick" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: White;" stylesheets="@CSS/Text.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.UserDashBoardFormController">
+   <children>
+      <Pane layoutX="1664.0" layoutY="20.0" onMouseEntered="#showOptionsOnClcick" prefHeight="66.0" prefWidth="238.0" style="-fx-background-color: #E8E6E8; -fx-background-radius: 5;" />
+      <Separator layoutX="2.0" layoutY="106.0" prefHeight="11.0" prefWidth="1906.0" />
+      <Pane layoutX="240.0" layoutY="43.0" prefHeight="35.0" prefWidth="365.0" style="-fx-background-color: #E8E6E8; -fx-background-radius: 5;" />
+      <Circle fill="#dfe5e89b" layoutX="1703.0" layoutY="53.0" onMouseClicked="#showOptionsOnClcick" onMouseEntered="#showOptionsOnClcick" radius="21.0" stroke="#7a7373e8" strokeType="INSIDE" strokeWidth="2.0" />
+      <AnchorPane fx:id="NavigationContext" layoutX="55.0" layoutY="111.0" prefHeight="971.0" prefWidth="1865.0" style="-fx-background-color: White;">
+         <children>
+            <ScrollPane layoutY="42.0" prefHeight="868.0" prefWidth="1866.0">
+              <content>
+                <AnchorPane fx:id="ItemViewPane" minHeight="0.0" minWidth="0.0" prefHeight="876.0" prefWidth="1849.0" style="-fx-background-color: White;" />
+              </content>
+            </ScrollPane>
+            <JFXComboBox fx:id="cmbItemCategory" focusColor="#405aa800" layoutX="21.0" layoutY="6.0" prefHeight="25.0" prefWidth="238.0" promptText="Category" unFocusColor="#4d4d4d13" />
+            <Label fx:id="lblTotalItemCount" layoutX="310.0" layoutY="9.0" style="-fx-font-size: 18;" text="Total Products: 500" />
+            <JFXTextField fx:id="ttxSearch" layoutX="457.0" onAction="#searchItem" prefHeight="42.0" prefWidth="1128.0" promptText="SEARCH" style="-fx-background-radius: 3; -fx-border-radius: 3; -fx-border-color: #CDCDCD;" unFocusColor="#4d4d4d00">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton layoutX="1591.0" layoutY="3.0" onAction="#searchItem" prefHeight="36.0" prefWidth="124.0" style="-fx-background-color: #00796B; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-color: #45922F; -fx-border-width: 1; -fx-font-size: 15;" text="SEARCH" textFill="#393333">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Separator layoutX="377.0" layoutY="-64.0" orientation="VERTICAL" prefHeight="25.0" prefWidth="6.0" />
+            <AnchorPane layoutX="-54.0" layoutY="910.0" prefHeight="66.0" prefWidth="1921.0" style="-fx-background-color: #00796B; -fx-background-radius: 4;">
+               <children>
+                  <JFXButton fx:id="btnCheckOut" layoutX="1775.0" layoutY="12.0" onAction="#showCheckoutPaneOnAction" prefHeight="38.0" prefWidth="117.0" style="-fx-background-color: #E8E6E8; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-color: #45922F; -fx-border-width: 1; -fx-font-size: 12;" text="Check Out" textFill="#393333">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="22.0">
+                           <image>
+                              <Image url="@../Assets/2x/outline_shopping_cart_checkout_black_24dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <Label fx:id="SouthItemCount" layoutX="1434.0" layoutY="22.0" style="-fx-font-size: 20; -fx-text-fill: White;" text="CART ITEM COUNT:0" />
+                  <Label fx:id="SouthTotalPrice" layoutX="1614.0" layoutY="22.0" style="-fx-font-size: 20; -fx-text-fill: White;" text="Total: Rs.0/=" />
+               </children></AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-5.0" layoutY="-1.0" onMouseEntered="#ShowPaneOnDrag" prefHeight="1087.0" prefWidth="62.0" style="-fx-background-color: #E8E6E8; -fx-background-radius: 10;" />
+      <AnchorPane fx:id="OptionPane" onMouseExited="#hideOnClick" prefHeight="1087.0" prefWidth="177.0" style="-fx-background-color: #E8E6E8; -fx-background-radius: 5;" visible="false">
+         <children>
+            <JFXButton layoutX="2.0" layoutY="71.0" onAction="#ManageCustomersOnAction" prefHeight="35.0" prefWidth="199.0" style="-fx-background-color: #E8E6E8;" text="Customers">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="2.0" layoutY="163.0" onAction="#manageStockOnAction" prefHeight="38.0" prefWidth="199.0" style="-fx-background-color: #E8E6E8;" text="Low Stock">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="3.0" layoutY="207.0" onAction="#manageOrdersOnAction" prefHeight="38.0" prefWidth="199.0" style="-fx-background-color: #E8E6E8;" text="Orders">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="3.0" layoutY="254.0" onAction="#manageDeliveryOnAction" prefHeight="38.0" prefWidth="199.0" style="-fx-background-color: #E8E6E8;" text="Delivery">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="3.0" layoutY="299.0" onAction="#manageVendorsOnAction" prefHeight="38.0" prefWidth="199.0" style="-fx-background-color: #E8E6E8;" text="Vendors">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="3.0" layoutY="348.0" onAction="#managePurchasesOnAction" prefHeight="38.0" prefWidth="199.0" style="-fx-background-color: #E8E6E8;" text="Purchases">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="2.0" layoutY="115.0" onAction="#manageItemOnAction" prefHeight="38.0" prefWidth="199.0" style="-fx-background-color: #E8E6E8;" text="Items">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="12.0" layoutY="11.0" onAction="#goToDashBoardOnAction" prefHeight="35.0" prefWidth="199.0" style="-fx-background-color: #E8E6E8;" text="Dashboard">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="userContext" layoutX="1611.0" layoutY="89.0" onMouseExited="#hideOnClick" prefHeight="334.0" prefWidth="262.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #E8E6E8;" visible="false">
+         <children>
+            <Circle fill="#dfe5e89b" layoutX="135.0" layoutY="50.0" onMouseClicked="#showOptionsOnClcick" onMouseEntered="#showOptionsOnClcick" radius="29.0" stroke="#7a7373e8" strokeType="INSIDE" strokeWidth="2.0" />
+            <ImageView fitHeight="36.0" fitWidth="35.0" layoutX="118.0" layoutY="34.0">
+               <image>
+                  <Image url="@../Assets/outline_person_black_24dp.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="13.0" layoutY="194.0" onAction="#signOutOnAction" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E8E6E8;" text="Sign Out">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0">
+                     <image>
+                        <Image url="@../Assets/outline_logout_black_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="11.0" layoutY="233.0" onAction="#showLoginPaneOnAction" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E8E6E8;" text="Admin">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0">
+                     <image>
+                        <Image url="@../Assets/outline_admin_panel_settings_black_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="7.0" layoutY="271.0" onAction="#exitApplicationOnAction" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E8E6E8;" text="Exit">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0">
+                     <image>
+                        <Image url="@../Assets/outline_exit_to_app_black_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label layoutX="41.0" layoutY="90.0" style="-fx-font-size: 20;" text="Derick Andrew Ferdinands" />
+            <Text layoutX="115.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Owner" />
+            <Separator layoutX="19.0" layoutY="143.0" opacity="0.57" prefHeight="2.0" prefWidth="238.0" style="-fx-background-color: Black;" />
+            <JFXButton layoutX="12.0" layoutY="154.0" onAction="#switchUserOnAction" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E8E6E8;" text="Switch User">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0">
+                     <image>
+                        <Image url="@../Assets/2x/outline_switch_account_black_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Pane layoutX="71.0" layoutY="-57.0" onMouseEntered="#showOptionsOnClcick" prefHeight="52.0" prefWidth="206.0" />
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="36.0" fitWidth="35.0" layoutX="1686.0" layoutY="35.0" onMouseEntered="#showOptionsOnClcick">
+         <image>
+            <Image url="@../Assets/outline_person_black_24dp.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="892.0" layoutY="42.0" style="-fx-font-size: 30;" text="T&amp;G">
+         <font>
+            <Font name="System Italic" size="40.0" />
+         </font>
+      </Label>
+      <Label layoutX="990.0" layoutY="42.0" style="-fx-font-size: 30;" text="GROCCERS">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="36.0" fitWidth="50.0" layoutX="940.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/TNG.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="1649.0" layoutY="39.0" orientation="VERTICAL" prefHeight="33.0" prefWidth="6.0" />
+      <JFXButton fx:id="btnNorthCheckOut" layoutX="1449.0" layoutY="42.0" onAction="#showCheckoutPaneOnAction" prefHeight="33.0" prefWidth="168.0" text="Check Out :Rs.00000/=">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0">
+               <image>
+                  <Image url="@../Assets/2x/outline_shopping_cart_black_24dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="36.0" fitWidth="35.0" layoutX="8.0" layoutY="9.0" onMouseClicked="#ShowPaneOnDrag" onMouseEntered="#ShowPaneOnDrag">
+         <image>
+            <Image url="@../Assets/outline_dashboard_black_24dp.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="txtUserName" layoutX="1732.0" layoutY="55.0" onMouseEntered="#showOptionsOnClcick" style="-fx-font-size: 15;" text="Derick Andrew Ferdinands" />
+      <Text fx:id="txtJobTitle" layoutX="1733.0" layoutY="51.0" onMouseEntered="#showOptionsOnClcick" strokeType="OUTSIDE" strokeWidth="0.0" text="Owner" />
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="13.0" layoutY="78.0">
+         <image>
+            <Image url="@../Assets/outline_people_black_24dp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="11.0" layoutY="170.0">
+         <image>
+            <Image url="@../Assets/outline_inventory_2_black_24dp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="11.0" layoutY="123.0">
+         <image>
+            <Image url="@../Assets/outline_store_black_24dp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="12.0" layoutY="216.0">
+         <image>
+            <Image url="@../Assets/outline_shopping_bag_black_24dp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="16.0" layoutY="262.0">
+         <image>
+            <Image url="@../Assets/outline_local_shipping_black_24dp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="13.0" layoutY="306.0">
+         <image>
+            <Image url="@../Assets/outline_storefront_black_24dp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="13.0" layoutY="353.0">
+         <image>
+            <Image url="@../Assets/outline_sell_black_24dp.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="867.0" layoutY="37.0" onAction="#goToDashBoardOnAction" prefHeight="45.0" prefWidth="247.0" text=" ">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <Label fx:id="lblDate" layoutX="325.0" layoutY="49.0" style="-fx-font-size: 20; -fx-text-fill: #070707;" text="03/11/2022" />
+      <Label layoutX="275.0" layoutY="49.0" style="-fx-font-size: 20; -fx-text-fill: #070707;" text="Date:" />
+      <Label layoutX="455.0" layoutY="49.0" style="-fx-font-size: 20; -fx-text-fill: #070707;" text="Time:" />
+      <Label fx:id="lblTime" layoutX="503.0" layoutY="49.0" style="-fx-font-size: 20; -fx-text-fill: #070707;" text="5: 15 PM" />
+      <AnchorPane fx:id="adminLoginContext" layoutX="1611.0" layoutY="359.0" onMouseExited="#hideAdminLoginContextOnAction" prefHeight="141.0" prefWidth="277.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #E8E6E8;" visible="false">
+         <children>
+            <Pane layoutX="71.0" layoutY="-57.0" onMouseEntered="#showOptionsOnClcick" prefHeight="52.0" prefWidth="206.0" />
+            <JFXTextField fx:id="txtAdminUserName" layoutX="40.0" layoutY="13.0" onKeyReleased="#nextAdminFieldOnAction" prefHeight="25.0" prefWidth="211.0" promptText="User_Name" />
+            <JFXTextField fx:id="txtAdminPassword" layoutX="40.0" layoutY="53.0" prefHeight="25.0" prefWidth="211.0" promptText="Password" />
+            <JFXButton layoutX="40.0" layoutY="94.0" onAction="#logInAsAdminOnAction" prefHeight="27.0" prefWidth="211.0" style="-fx-background-color: #E8E6E8; -fx-border-radius: 5; -fx-background-radius: \\5; -fx-border-color: #45922F; -fx-border-width: 1; -fx-font-size: 12;" text="Log In As Admin" textFill="#393333">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Circle fill="#1f93ff00" layoutX="1479.0" layoutY="46.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text fx:id="CartItemCount" layoutX="1476.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+      <AnchorPane fx:id="SwitchUserLogin" layoutX="1612.0" layoutY="283.0" onMouseExited="#hideSwitchUserLoginContextOnAction" prefHeight="141.0" prefWidth="277.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #E8E6E8;" visible="false">
+         <children>
+            <Pane layoutX="71.0" layoutY="-57.0" onMouseEntered="#showOptionsOnClcick" prefHeight="52.0" prefWidth="206.0" />
+            <JFXTextField fx:id="txtSwitchUserName" layoutX="40.0" layoutY="13.0" onKeyReleased="#nextFieldOnAction" prefHeight="25.0" prefWidth="211.0" promptText="User_Name" />
+            <JFXTextField fx:id="txtSwitchPassword" layoutX="40.0" layoutY="53.0" onKeyReleased="#nextFieldOnAction" prefHeight="25.0" prefWidth="211.0" promptText="Password" />
+            <JFXButton layoutX="40.0" layoutY="94.0" onAction="#switchUserDetailsOnAction" prefHeight="27.0" prefWidth="211.0" style="-fx-background-color: #E8E6E8; -fx-border-radius: 5; -fx-background-radius: \\5; -fx-border-color: #45922F; -fx-border-width: 1; -fx-font-size: 12;" text="Switch User" textFill="#393333">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="AnchorPanePLaceOrder" layoutX="800.0" layoutY="247.0" prefHeight="580.0" prefWidth="1088.0" style="-fx-background-color: #E8E6E8; -fx-background-radius: 3; -fx-border-color: #030303; -fx-border-radius: 3;" visible="false">
+         <children>
+            <TableView fx:id="tblOrderItems" layoutX="34.0" layoutY="89.0" prefHeight="417.0" prefWidth="1019.0" stylesheets="@CSS/table.css">
+               <columns>
+                  <TableColumn fx:id="colItem" prefWidth="146.0" text="Item Code" />
+                  <TableColumn fx:id="colDesc" prefWidth="233.99996948242188" text="Name / Description" />
+                  <TableColumn fx:id="colUnitPrice" prefWidth="175.0" text="Unit Price" />
+                  <TableColumn fx:id="colQty" prefWidth="165.0" text="Qty" />
+                  <TableColumn fx:id="colCost" prefWidth="172.0" text="Cost" />
+                  <TableColumn fx:id="colOption" prefWidth="126.0" text="---" />
+               </columns>
+            </TableView>
+            <JFXComboBox fx:id="cmbPaymentMethod" layoutX="176.0" layoutY="529.0" prefHeight="25.0" prefWidth="200.0" promptText="Payment Method" />
+            <JFXComboBox fx:id="cmbPaymentStatus" layoutX="409.0" layoutY="528.0" prefHeight="25.0" prefWidth="200.0" promptText="Payment Status" />
+            <JFXButton fx:id="btnPlaceOrder" layoutX="850.0" layoutY="524.0" onAction="#placeOrderOnAction" prefHeight="34.0" prefWidth="200.0" style="-fx-background-color: #499C54;" text="Place Order" textFill="#282424">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="lblTotal" layoutX="16.0" layoutY="527.0" style="-fx-font-size: 18;" text="Total:" textFill="#c75450">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="cmbCustomerNIC" editable="true" layoutX="34.0" layoutY="32.0" onKeyReleased="#checkCustomerNIC" prefHeight="25.0" prefWidth="206.0" promptText="Customer NIC" />
+            <JFXComboBox fx:id="cmbCustomerName" editable="true" layoutX="274.0" layoutY="32.0" onKeyReleased="#checkCustomerMobile" prefHeight="25.0" prefWidth="206.0" promptText="Customer Mobile" />
+            <JFXButton fx:id="btnSendOnDelivery" layoutX="640.0" layoutY="524.0" onAction="#sendOrderOnDelivery" prefHeight="34.0" prefWidth="200.0" style="-fx-background-color: #499C54;" text="Send On Delivery" textFill="#282424">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="33.0" fitWidth="35.0" layoutX="1046.0" layoutY="7.0" onMouseClicked="#closePaneOnAction">
+               <image>
+                  <Image url="@../Assets/2x/outline_close_black_24dp.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <AnchorPane fx:id="IdPane2" layoutX="509.0" layoutY="24.0" prefHeight="42.0" prefWidth="340.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtCustomerName" editable="false" layoutX="13.0" layoutY="8.0" prefHeight="28.0" prefWidth="339.0" promptText="Derick Andrew Ferdinands" style="-fx-border-color: #E8E6E8; -fx-background-color: #E8E6E8;" styleClass="textField" />
+                  <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: #E8E6E8;" styleClass="textLabel" text="Name*" textFill="#838383">
+                     <font>
+                        <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

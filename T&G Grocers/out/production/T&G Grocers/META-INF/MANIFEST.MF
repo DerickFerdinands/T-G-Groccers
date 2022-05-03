@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Main-Class: AppInitializer
+Class-Path: jfoenix-8.0.8.jar mysql-connector-java-8.0.22.jar bcprov-jdk
+ 15on-1.64.jar castor-core-1.4.1.jar castor-xml-1.4.1.jar commons-beanut
+ ils-1.9.4.jar commons-collections-3.2.2.jar commons-collections4-4.2.ja
+ r commons-digester-2.1.jar commons-lang3-3.4.jar commons-logging-1.1.1.
+ jar ecj-3.21.0.jar itext-2.1.7.js8.jar jackson-annotations-2.12.2.jar j
+ ackson-core-2.12.2.jar jackson-databind-2.12.2.jar jasperreports-6.17.0
+ .jar javax.inject-1.jar jcommon-1.0.23.jar jfreechart-1.0.19.jar contro
+ lsfx-8.40.11.jar
+

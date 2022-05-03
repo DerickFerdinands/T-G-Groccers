@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="971.0" prefWidth="1865.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ViewStatsFormController">
+   <children>
+      <AnchorPane fx:id="IdPane5" layoutX="215.0" layoutY="30.0" prefHeight="42.0" prefWidth="602.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #E8E6E8;" styleClass="textPane">
+         <children>
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="595.0">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="273.0" text="VIEW CUSTOMER STATS" textFill="#4a4343">
+                     <font>
+                        <Font name="Tw Cen MT Condensed Extra Bold" size="31.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <BarChart fx:id="BarChartCustomers" layoutX="45.0" layoutY="170.0" prefHeight="681.0" prefWidth="842.0" stylesheets="@CSS/BarChart.css" title="Customer Stats">
+        <xAxis>
+          <CategoryAxis label="Customers" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <BarChart fx:id="BarChartItems" layoutX="935.0" layoutY="170.0" prefHeight="681.0" prefWidth="842.0" stylesheets="@CSS/BarChart.css" title="Item Stats">
+         <xAxis>
+            <CategoryAxis label="Items" side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis side="LEFT" />
+         </yAxis>
+      </BarChart>
+      <AnchorPane fx:id="IdPane51" layoutX="1089.0" layoutY="30.0" prefHeight="42.0" prefWidth="602.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #E8E6E8;" styleClass="textPane">
+         <children>
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="595.0">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="207.0" text="VIEW ITEM STATS" textFill="#4a4343">
+                     <font>
+                        <Font name="Tw Cen MT Condensed Extra Bold" size="31.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

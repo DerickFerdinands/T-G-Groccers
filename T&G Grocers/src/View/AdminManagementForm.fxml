@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AdminMainPane" prefHeight="971.0" prefWidth="1865.0" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminManagementFormController">
+   <children>
+      <JFXButton fx:id="btnAddAdmin" layoutX="103.0" layoutY="847.0" onAction="#addAdminOnAction" prefHeight="31.0" prefWidth="491.0" style="-fx-background-color: #1C1C1C;" text="+ ADD ADMIN" textFill="#b8b8b8">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="1347.0" layoutY="81.0">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="31.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnDeleteEmployee" layoutX="1321.0" layoutY="846.0" onAction="#deleteEmployeeOnAction" prefHeight="31.0" prefWidth="257.0" style="-fx-background-color: #1C1C1C;" text="- DELETE EMPLOYEE" textFill="#b8b8b8">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdateEmployee" layoutX="1592.0" layoutY="846.0" onAction="#updateEmployeeOnAction" prefHeight="32.0" prefWidth="257.0" style="-fx-background-color: #1C1C1C;" text="UPDATE EMPLOYEE" textFill="#b8b8b8">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="16.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="21.0">
+               <image>
+                  <Image url="@../Assets/2x/outline_update_white_24dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXTextField fx:id="txtSearchAdmin" focusColor="#00796b" layoutX="660.0" layoutY="99.0" onAction="#searchViewForAdminOnAction" prefHeight="25.0" prefWidth="316.0" style="-fx-border-color: #AEAEAE; -fx-background-radius: 5; -fx-border-radius: 5;" unFocusColor="#4d4d4d00" />
+      <JFXButton layoutX="988.0" layoutY="96.0" onAction="#searchViewForAdminOnAction" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #1C1C1C;" text="SEARCH" textFill="#b8b8b8">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane fx:id="AdminImagePane" layoutX="236.0" layoutY="96.0" prefHeight="167.0" prefWidth="156.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane" />
+      <ScrollPane layoutX="663.0" layoutY="136.0" prefHeight="800.0" prefWidth="585.0">
+         <content>
+            <AnchorPane fx:id="AdminScrollerAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="830.0" prefWidth="1141.0" />
+         </content>
+      </ScrollPane>
+      <AnchorPane fx:id="AddImageAnchorPane" layoutX="242.0" layoutY="101.0" onMouseClicked="#openImageChooser" prefHeight="146.0" prefWidth="144.0" style="-fx-border-color: #AEAEAE; -fx-background-color: #E9E9E9;">
+         <children>
+            <ImageView fitHeight="66.0" fitWidth="58.0" layoutX="41.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/2x/outline_add_a_photo_black_24dp.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane" layoutX="82.0" layoutY="317.0" prefHeight="42.0" prefWidth="232.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtAdminNIC" layoutX="13.0" layoutY="8.0" onKeyReleased="#ValidateAddFields" prefHeight="28.0" prefWidth="250.0" promptText="200416803088" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="NIC*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane1" layoutX="82.0" layoutY="440.0" prefHeight="42.0" prefWidth="265.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Date Of Birth*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXDatePicker fx:id="dtpckrDOB" defaultColor="#008f81f5" layoutX="14.0" layoutY="8.0" prefHeight="25.0" prefWidth="250.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane11" layoutX="82.0" layoutY="564.0" prefHeight="42.0" prefWidth="180.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtAdminMobile" layoutX="13.0" layoutY="8.0" onKeyReleased="#ValidateAddFields" prefHeight="28.0" prefWidth="250.0" promptText="077xxxxxx" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Mobile*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane61" layoutX="1466.0" layoutY="95.0" prefHeight="167.0" prefWidth="156.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane" />
+      <AnchorPane fx:id="IdPane111" layoutX="86.0" layoutY="625.0" prefHeight="42.0" prefWidth="180.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtAdminEmail" layoutX="13.0" layoutY="8.0" onKeyReleased="#ValidateAddFields" prefHeight="28.0" prefWidth="502.0" promptText="someone@gmail.com" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Email*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane2" layoutX="82.0" layoutY="377.0" prefHeight="34.0" prefWidth="517.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtAdminName" layoutX="13.0" layoutY="8.0" onKeyReleased="#ValidateAddFields" prefHeight="31.0" prefWidth="502.0" promptText="Derick Andrew Ferdinands" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Name*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane3" layoutX="83.0" layoutY="504.0" prefHeight="42.0" prefWidth="164.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtAdminAddress" layoutX="13.0" layoutY="8.0" onKeyReleased="#ValidateAddFields" prefHeight="28.0" prefWidth="502.0" promptText="Colombo" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Address*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Separator layoutX="639.0" layoutY="98.0" orientation="VERTICAL" prefHeight="831.0" prefWidth="16.0" />
+      <Separator layoutX="1255.0" layoutY="97.0" orientation="VERTICAL" prefHeight="831.0" prefWidth="16.0" />
+      <Label layoutX="255.0" layoutY="255.0" style="-fx-background-color: White;" styleClass="textLabel" text="Add Employee Picture" textFill="#838383">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="IdPane5" layoutX="35.0" layoutY="23.0" prefHeight="42.0" prefWidth="602.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #E8E6E8;" styleClass="textPane">
+         <children>
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="595.0">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="146.0" text="ADD ADMIN" textFill="#4a4343">
+                     <font>
+                        <Font name="Tw Cen MT Condensed Extra Bold" size="31.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane51" layoutX="655.0" layoutY="23.0" prefHeight="42.0" prefWidth="585.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #E8E6E8;" styleClass="textPane">
+         <children>
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="595.0">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="156.0" text="VIEW ADMIN" textFill="#4a4343">
+                     <font>
+                        <Font name="Tw Cen MT Condensed Extra Bold" size="31.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane511" layoutX="1275.0" layoutY="23.0" prefHeight="42.0" prefWidth="595.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #E8E6E8;" styleClass="textPane">
+         <children>
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="595.0">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="281.0" text="UPDATE/DELETE ADMIN" textFill="#4a4343">
+                     <font>
+                        <Font name="Tw Cen MT Condensed Extra Bold" size="31.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane113" layoutX="82.0" layoutY="684.0" prefHeight="42.0" prefWidth="180.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtAdminUserName" layoutX="13.0" layoutY="8.0" onKeyReleased="#ValidateAddFields" prefHeight="28.0" prefWidth="250.0" promptText="077xxxxxx" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="User_Name*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane1131" layoutX="82.0" layoutY="744.0" prefHeight="42.0" prefWidth="180.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtPassword" layoutX="13.0" layoutY="8.0" onKeyReleased="#ValidateAddFields" prefHeight="28.0" prefWidth="250.0" promptText="077xxxxxx" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Password*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane11311" layoutX="362.0" layoutY="744.0" prefHeight="42.0" prefWidth="180.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtRe_enterPassword" layoutX="13.0" layoutY="8.0" onKeyReleased="#ValidateAddFields" prefHeight="28.0" prefWidth="250.0" promptText="077xxxxxx" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Re_Enter Password*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1472.0" layoutY="101.0" onMouseClicked="#openUpdateImageChooser" prefHeight="146.0" prefWidth="144.0" style="-fx-border-color: #AEAEAE; -fx-background-color: #E9E9E9;">
+         <children>
+            <ImageView fitHeight="66.0" fitWidth="58.0" layoutX="41.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/2x/outline_add_a_photo_black_24dp.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="UpdateImage" fitHeight="154.0" fitWidth="144.0" layoutX="-3.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane4" layoutX="1312.0" layoutY="317.0" prefHeight="42.0" prefWidth="232.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtUPANIC" layoutX="13.0" layoutY="8.0" onAction="#searchAdminOnAction" onKeyReleased="#validateUpdateFields" prefHeight="28.0" prefWidth="250.0" promptText="200416803088" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="NIC*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane12" layoutX="1312.0" layoutY="440.0" prefHeight="42.0" prefWidth="265.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Date Of Birth*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXDatePicker fx:id="dtpckrUPADOB" defaultColor="#008f81f5" layoutX="14.0" layoutY="8.0" prefHeight="25.0" prefWidth="250.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane112" layoutX="1312.0" layoutY="564.0" prefHeight="42.0" prefWidth="180.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtUPAMobile" layoutX="13.0" layoutY="8.0" onKeyReleased="#validateUpdateFields" prefHeight="28.0" prefWidth="250.0" promptText="077xxxxxx" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Mobile*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane1111" layoutX="1316.0" layoutY="625.0" prefHeight="42.0" prefWidth="180.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtUPAEMail" layoutX="13.0" layoutY="8.0" onKeyReleased="#validateUpdateFields" prefHeight="28.0" prefWidth="502.0" promptText="someone@gmail.com" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Email*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane21" layoutX="1312.0" layoutY="377.0" prefHeight="34.0" prefWidth="517.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtUPAName" layoutX="13.0" layoutY="8.0" onKeyReleased="#validateUpdateFields" prefHeight="31.0" prefWidth="502.0" promptText="Derick Andrew Ferdinands" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Name*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane31" layoutX="1313.0" layoutY="504.0" prefHeight="42.0" prefWidth="164.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtUPAAddress" layoutX="13.0" layoutY="8.0" onKeyReleased="#validateUpdateFields" prefHeight="28.0" prefWidth="502.0" promptText="Colombo" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Address*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="1478.0" layoutY="254.0" style="-fx-background-color: White;" styleClass="textLabel" text="Change Employee Picture" textFill="#838383">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="IdPane1132" layoutX="1312.0" layoutY="684.0" prefHeight="42.0" prefWidth="180.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtUPAUser_Name" layoutX="13.0" layoutY="8.0" onKeyReleased="#validateUpdateFields" prefHeight="28.0" prefWidth="250.0" promptText="077xxxxxx" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="User_Name*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane11312" layoutX="1312.0" layoutY="744.0" prefHeight="42.0" prefWidth="180.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtUPAPassword" layoutX="13.0" layoutY="8.0" onKeyReleased="#validateUpdateFields" prefHeight="28.0" prefWidth="250.0" promptText="077xxxxxx" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Password*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane113111" layoutX="1588.0" layoutY="744.0" prefHeight="42.0" prefWidth="180.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtUPDARE_ENTERPassword" layoutX="13.0" layoutY="8.0" onKeyReleased="#validateUpdateFields" prefHeight="28.0" prefWidth="250.0" promptText="077xxxxxx" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Re_Enter Password*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

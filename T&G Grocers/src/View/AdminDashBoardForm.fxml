@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="MainContext" onKeyReleased="#checkShortcutKeys" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@CSS/Text.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminDashBoardFormController">
+   <children>
+      <Separator layoutX="63.0" layoutY="116.0" prefHeight="11.0" prefWidth="1855.0" />
+      <AnchorPane fx:id="navigationPane" layoutX="61.0" layoutY="116.0" prefHeight="971.0" prefWidth="1865.0">
+         <children>
+            <BarChart fx:id="productSalesChart" layoutX="40.0" layoutY="110.0" prefHeight="787.0" prefWidth="978.0" stylesheets="@CSS/BarChart.css" title="Product Sales">
+              <xAxis>
+                <CategoryAxis label="Products" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis label="Qty Sold" side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <LineChart fx:id="salesLineChart" layoutX="1042.0" layoutY="114.0" prefHeight="787.0" prefWidth="794.0" title="Sales">
+              <xAxis>
+                <CategoryAxis label="Day" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis label="Sale Per Day" side="LEFT" />
+              </yAxis>
+            </LineChart>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="leftOptionPane" layoutY="-1.0" onMouseEntered="#ShowPaneOnDrag" prefHeight="1087.0" prefWidth="62.0" style="-fx-background-color: #E8E6E8; -fx-background-radius: 10;">
+         <children>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="16.0" layoutY="135.0">
+               <image>
+                  <Image url="@../Assets/2x/outline_badge_black_24dp.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="16.0" layoutY="181.0">
+               <image>
+                  <Image url="@../Assets/2x/outline_directions_car_black_24dp.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="23.0" fitWidth="35.0" layoutX="11.0" layoutY="229.0">
+               <image>
+                  <Image url="@../Assets/driving-license.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="25.0" layoutX="16.0" layoutY="271.0">
+               <image>
+                  <Image url="@../Assets/gas-bill-paid.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="17.0" layoutY="321.0">
+               <image>
+                  <Image url="@../Assets/2x/outline_summarize_black_24dp.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="18.0" layoutY="366.0">
+               <image>
+                  <Image url="@../Assets/2x/outline_account_circle_black_24dp.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="23.0" fitWidth="25.0" layoutX="19.0" layoutY="413.0">
+               <image>
+                  <Image url="@../Assets/2x/outline_admin_panel_settings_black_24dp.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="19.0" layoutY="458.0">
+               <image>
+                  <Image url="@../Assets/2x/outline_query_stats_black_24dp.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="23.0" fitWidth="25.0" layoutX="22.0" layoutY="506.0">
+               <image>
+                  <Image url="@../Assets/2x/outline_discount_black_24dp.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="OptionPane" onMouseExited="#hideOnClick" prefHeight="1087.0" prefWidth="168.0" style="-fx-background-color: #E8E6E8; -fx-background-radius: 5;" visible="false">
+         <children>
+            <JFXButton layoutX="13.0" layoutY="496.0" onAction="#toDiscountsOnAction" prefHeight="38.0" prefWidth="199.0" style="-fx-background-color: #E8E6E8;" text="Discounts">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="12.0" layoutY="173.0" onAction="#manageVehicleOnAction" prefHeight="38.0" prefWidth="199.0" style="-fx-background-color: #E8E6E8;" text="Vehicle">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="13.0" layoutY="219.0" onAction="#manageDriverOnAction" prefHeight="38.0" prefWidth="199.0" style="-fx-background-color: #E8E6E8;" text="Driver">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="13.0" layoutY="265.0" onAction="#manageExpenseOnAction" prefHeight="38.0" prefWidth="199.0" style="-fx-background-color: #E8E6E8;" text="Expenses">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="13.0" layoutY="311.0" onAction="#manageReportsOnAction" prefHeight="38.0" prefWidth="199.0" style="-fx-background-color: #E8E6E8;" text=" Reports">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="12.0" layoutY="127.0" onAction="#manageEmployeeOnAction" prefHeight="38.0" prefWidth="199.0" style="-fx-background-color: #E8E6E8;" text="Employee">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="12.0" layoutY="11.0" onAction="#goToDashBoardOnAction" prefHeight="35.0" prefWidth="199.0" style="-fx-background-color: #E8E6E8;" text="Dashboard">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="17.0" layoutY="134.0">
+               <image>
+                  <Image url="@../Assets/2x/outline_badge_black_24dp.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="17.0" layoutY="180.0">
+               <image>
+                  <Image url="@../Assets/2x/outline_directions_car_black_24dp.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="23.0" fitWidth="35.0" layoutX="12.0" layoutY="228.0">
+               <image>
+                  <Image url="@../Assets/driving-license.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="25.0" layoutX="17.0" layoutY="270.0">
+               <image>
+                  <Image url="@../Assets/gas-bill-paid.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="18.0" layoutY="320.0">
+               <image>
+                  <Image url="@../Assets/2x/outline_summarize_black_24dp.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="13.0" layoutY="359.0" onAction="#manageUsersOnAction" prefHeight="38.0" prefWidth="199.0" style="-fx-background-color: #E8E6E8;" text="Users">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="19.0" layoutY="365.0">
+               <image>
+                  <Image url="@../Assets/2x/outline_account_circle_black_24dp.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="13.0" layoutY="406.0" onAction="#manageAdminOnAction" prefHeight="38.0" prefWidth="199.0" style="-fx-background-color: #E8E6E8;" text="Admin">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="23.0" fitWidth="25.0" layoutX="20.0" layoutY="412.0">
+               <image>
+                  <Image url="@../Assets/2x/outline_admin_panel_settings_black_24dp.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="13.0" layoutY="452.0" onAction="#viewStatsOnAction" prefHeight="38.0" prefWidth="199.0" style="-fx-background-color: #E8E6E8;" text="Stats">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="20.0" layoutY="457.0">
+               <image>
+                  <Image url="@../Assets/2x/outline_query_stats_black_24dp.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="23.0" fitWidth="25.0" layoutX="22.0" layoutY="505.0">
+               <image>
+                  <Image url="@../Assets/2x/outline_discount_black_24dp.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Pane layoutX="250.0" layoutY="53.0" prefHeight="35.0" prefWidth="365.0" style="-fx-background-color: #E8E6E8; -fx-background-radius: 5;" />
+      <Label fx:id="lblDate" layoutX="335.0" layoutY="59.0" style="-fx-font-size: 20; -fx-text-fill: #070707;" text="03/11/2022" />
+      <Label layoutX="285.0" layoutY="59.0" style="-fx-font-size: 20; -fx-text-fill: #070707;" text="Date:" />
+      <Label layoutX="465.0" layoutY="59.0" style="-fx-font-size: 20; -fx-text-fill: #070707;" text="Time:" />
+      <Label fx:id="lblTime" layoutX="513.0" layoutY="59.0" style="-fx-font-size: 20; -fx-text-fill: #070707;" text="5: 15 PM" />
+      <Label layoutX="902.0" layoutY="52.0" style="-fx-font-size: 30;" text="T&amp;G">
+         <font>
+            <Font name="System Italic" size="40.0" />
+         </font>
+      </Label>
+      <Label layoutX="1000.0" layoutY="52.0" style="-fx-font-size: 30;" text="GROCCERS">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="36.0" fitWidth="50.0" layoutX="950.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/TNG.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="877.0" layoutY="47.0" onAction="#goToDashBoardOnAction" prefHeight="45.0" prefWidth="247.0" text=" ">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <Pane layoutX="1641.0" layoutY="28.0" onMouseEntered="#showOptionsOnClcick" prefHeight="66.0" prefWidth="277.0" style="-fx-background-color: #E8E6E8; -fx-background-radius: 5;">
+         <children>
+            <ImageView fitHeight="36.0" fitWidth="35.0" layoutX="9.0" layoutY="13.0" onMouseEntered="#showOptionsOnClcick">
+               <image>
+                  <Image url="@../Assets/outline_person_black_24dp.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="55.0" layoutY="33.0" onMouseEntered="#showOptionsOnClcick" style="-fx-font-size: 15;" text="Derick Andrew Ferdinands" />
+            <Text layoutX="56.0" layoutY="29.0" onMouseEntered="#showOptionsOnClcick" strokeType="OUTSIDE" strokeWidth="0.0" text="Owner" />
+         </children>
+      </Pane>
+      <Separator layoutX="1583.0" layoutY="42.0" orientation="VERTICAL" prefHeight="33.0" prefWidth="6.0" />
+      <ImageView fitHeight="36.0" fitWidth="35.0" layoutX="11.0" layoutY="11.0" onMouseClicked="#ShowPaneOnDrag" onMouseEntered="#ShowPaneOnDrag">
+         <image>
+            <Image url="@../Assets/outline_dashboard_black_24dp.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="userContext" layoutX="1586.0" layoutY="101.0" onMouseExited="#hideOnClick" prefHeight="340.0" prefWidth="277.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #E8E6E8;" visible="false">
+         <children>
+            <Circle fill="#dfe5e89b" layoutX="135.0" layoutY="50.0" onMouseClicked="#showOptionsOnClcick" onMouseEntered="#showOptionsOnClcick" radius="29.0" stroke="#7a7373e8" strokeType="INSIDE" strokeWidth="2.0" />
+            <ImageView fitHeight="36.0" fitWidth="35.0" layoutX="118.0" layoutY="34.0">
+               <image>
+                  <Image url="@../Assets/outline_person_black_24dp.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="13.0" layoutY="194.0" onAction="#singOutOnAction" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E8E6E8;" text="Sign Out">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0">
+                     <image>
+                        <Image url="@../Assets/outline_logout_black_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="11.0" layoutY="233.0" onAction="#showLoginPaneOnAction" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E8E6E8;" text="User">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0">
+                     <image>
+                        <Image url="@../Assets/outline_admin_panel_settings_black_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="7.0" layoutY="271.0" onAction="#exitApplicationOnAction" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E8E6E8;" text="Exit">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0">
+                     <image>
+                        <Image url="@../Assets/outline_exit_to_app_black_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label layoutX="41.0" layoutY="90.0" style="-fx-font-size: 20;" text="Derick Andrew Ferdinands" />
+            <Text layoutX="115.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Owner" />
+            <Separator layoutX="19.0" layoutY="143.0" opacity="0.57" prefHeight="2.0" prefWidth="238.0" style="-fx-background-color: Black;" />
+            <JFXButton layoutX="12.0" layoutY="154.0" onAction="#SwitchAdminOnAction" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E8E6E8;" text="Switch Admin">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0">
+                     <image>
+                        <Image url="@../Assets/2x/outline_switch_account_black_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Pane layoutX="71.0" layoutY="-57.0" onMouseEntered="#showOptionsOnClcick" prefHeight="52.0" prefWidth="206.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="UserLoginContext" layoutX="1587.0" layoutY="372.0" onMouseExited="#hideUserLoginContextOnAction" prefHeight="141.0" prefWidth="277.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #E8E6E8;" visible="false">
+         <children>
+            <Pane layoutX="71.0" layoutY="-57.0" onMouseEntered="#showOptionsOnClcick" prefHeight="52.0" prefWidth="206.0" />
+            <JFXTextField fx:id="txtUserName" layoutX="40.0" layoutY="13.0" onAction="#nextFieldOnAction" prefHeight="25.0" prefWidth="211.0" promptText="User_Name" />
+            <JFXTextField fx:id="txtPassword" layoutX="40.0" layoutY="53.0" prefHeight="25.0" prefWidth="211.0" promptText="Password" />
+            <JFXButton layoutX="40.0" layoutY="94.0" onAction="#logInAsUserOnAction" prefHeight="27.0" prefWidth="211.0" style="-fx-background-color: #E8E6E8; -fx-border-radius: 5; -fx-background-radius: \\5; -fx-border-color: #45922F; -fx-border-width: 1; -fx-font-size: 12;" text="Log In As User" textFill="#393333">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="SwitchAdminPane" layoutX="1587.0" layoutY="290.0" onMouseExited="#hideSwitchAdminPane" prefHeight="141.0" prefWidth="277.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #E8E6E8;" visible="false">
+         <children>
+            <Pane layoutX="71.0" layoutY="-57.0" onMouseEntered="#showOptionsOnClcick" prefHeight="52.0" prefWidth="206.0" />
+            <JFXTextField fx:id="txtSwitchUserName" layoutX="40.0" layoutY="13.0" onAction="#nextAdminFIeldOnAction" prefHeight="25.0" prefWidth="211.0" promptText="User_Name" />
+            <JFXTextField fx:id="txtSwitchPassword" layoutX="40.0" layoutY="53.0" prefHeight="25.0" prefWidth="211.0" promptText="Password" />
+            <JFXButton layoutX="40.0" layoutY="94.0" onAction="#SwitchAdminDetailsOnAction" prefHeight="27.0" prefWidth="211.0" style="-fx-background-color: #E8E6E8; -fx-border-radius: 5; -fx-background-radius: \\5; -fx-border-color: #45922F; -fx-border-width: 1; -fx-font-size: 12;" text="Switch Admin" textFill="#393333">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

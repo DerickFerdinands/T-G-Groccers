@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact name="T&amp;G Grocers:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/T_G_Grocers_jar</output-path>
+    <root id="root">
+      <element id="archive" name="T&amp;G Grocers.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="T&amp;G Grocers" />
+      </element>
+      <element id="library" level="project" name="jfoenix-8.0.8" />
+      <element id="library" level="project" name="mysql-connector-java-8.0.22" />
+      <element id="library" level="project" name="bcprov-jdk15on-1.64" />
+      <element id="library" level="project" name="controlsfx-8.40.11" />
+    </root>
+  </artifact>
+</component>

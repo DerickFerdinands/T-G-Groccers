@@ -1,0 +1,13 @@
+.textField{
+    -fx-background-color: white;
+    -fx-prompt-text-fill: #726d6d;
+}
+
+.JFXTextField{
+    -fx-background-color: white;
+    -fx-prompt-text-fill: #726d6d;
+}
+
+.AnchorPane{
+    -fx-background-color: white;
+}

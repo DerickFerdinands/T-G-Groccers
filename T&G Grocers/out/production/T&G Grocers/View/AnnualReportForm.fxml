@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="916.0" prefWidth="1865.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AnnualReportFormController">
+   <children>
+      <AnchorPane fx:id="IdPane5" layoutX="58.0" prefHeight="42.0" prefWidth="602.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #E8E6E8;" styleClass="textPane">
+         <children>
+            <HBox alignment="CENTER" layoutX="-7.0" prefHeight="42.0" prefWidth="713.0">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="343.0" text="VIEW ANUAL SALES RECORDS" textFill="#4a4343">
+                     <font>
+                        <Font name="Tw Cen MT Condensed Extra Bold" size="31.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane51" layoutX="812.0" prefHeight="42.0" prefWidth="602.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #E8E6E8;" styleClass="textPane">
+         <children>
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="713.0">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="400.0" text="VIEW ANUAL PURCHASE RECORDS" textFill="#4a4343">
+                     <font>
+                        <Font name="Tw Cen MT Condensed Extra Bold" size="31.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <JFXTreeTableView layoutX="73.0" layoutY="49.0" prefHeight="815.0" prefWidth="684.0">
+         <columns>
+            <TreeTableColumn prefWidth="223.00006103515625" text="Year" />
+            <TreeTableColumn prefWidth="262.9999694824219" text="Total Price" />
+            <TreeTableColumn prefWidth="196.0" text="View/Print Reciept" />
+         </columns>
+      </JFXTreeTableView>
+      <JFXTreeTableView layoutX="825.0" layoutY="49.0" prefHeight="815.0" prefWidth="684.0">
+         <columns>
+            <TreeTableColumn prefWidth="204.0" text="Year" />
+            <TreeTableColumn prefWidth="301.0" text="Total Price" />
+            <TreeTableColumn prefWidth="178.0" text="View/Print Reciept" />
+         </columns>
+      </JFXTreeTableView>
+      <Separator layoutX="780.0" layoutY="86.0" orientation="VERTICAL" prefHeight="839.0" prefWidth="16.0" />
+      <AnchorPane fx:id="IdPane52" layoutX="1525.0" layoutY="819.0" prefHeight="42.0" prefWidth="153.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #E8E6E8;" styleClass="textPane">
+         <children>
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="159.0">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="156.0" text="TOTAL INCOME:" textFill="#4a4343">
+                     <font>
+                        <Font name="Tw Cen MT Condensed Extra Bold" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <Label layoutX="80.0" layoutY="867.0" text="Total Sales:">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="173.0" layoutY="867.0" text="0000" textFill="#861010">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="628.0" layoutY="868.0" style="-fx-background-color: Green;" text="Print / View Report">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="1381.0" layoutY="869.0" style="-fx-background-color: Green;" text="Print / View Report">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="836.0" layoutY="866.0" text="Total Purchases:">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="960.0" layoutY="866.0" text="0000" textFill="#861010">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

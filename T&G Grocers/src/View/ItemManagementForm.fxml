@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ItemMainPane" prefHeight="971.0" prefWidth="1865.0" style="-fx-background-color: White;" stylesheets="@CSS/TextFields.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ItemManagementFormController">
+   <children>
+      <AnchorPane fx:id="addImagePane" layoutX="216.0" layoutY="175.0" prefHeight="167.0" prefWidth="156.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane" />
+      <AnchorPane fx:id="updateImageViewer" layoutX="1454.0" layoutY="177.0" prefHeight="167.0" prefWidth="156.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane" />
+      <JFXButton fx:id="btnAddItem" layoutX="67.0" layoutY="793.0" onAction="#addItemOnAction" prefHeight="31.0" prefWidth="491.0" style="-fx-background-color: #1C1C1C;" text="+ Add Item" textFill="#b8b8b8">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="1327.0" layoutY="61.0">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="31.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnDeleteItem" layoutX="1293.0" layoutY="793.0" onAction="#deleteItemOnAction" prefHeight="31.0" prefWidth="257.0" style="-fx-background-color: #1C1C1C;" text="- DELETE ITEM" textFill="#b8b8b8">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdateItem" layoutX="1572.0" layoutY="792.0" onAction="#updateItemOnAction" prefHeight="32.0" prefWidth="257.0" style="-fx-background-color: #1C1C1C;" text="UPDATE ITEM" textFill="#b8b8b8">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="16.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="21.0">
+               <image>
+                  <Image url="@../Assets/2x/outline_update_white_24dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXTextField fx:id="txtSearchItem" focusColor="#00796b" layoutX="640.0" layoutY="79.0" onAction="#searchItemOnAction" prefHeight="25.0" prefWidth="316.0" style="-fx-border-color: #AEAEAE; -fx-background-radius: 5; -fx-border-radius: 5;" unFocusColor="#4d4d4d00" />
+      <JFXButton layoutX="987.0" layoutY="77.0" onAction="#searchItemOnAction" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #1C1C1C;" text="SEARCH" textFill="#b8b8b8">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <ScrollPane layoutX="643.0" layoutY="116.0" prefHeight="800.0" prefWidth="585.0">
+         <content>
+            <AnchorPane fx:id="ItemScrollerAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="830.0" prefWidth="956.0">
+               <children>
+                  <AnchorPane layoutX="7.0" layoutY="798.0" prefHeight="68.0" prefWidth="778.0" style="-fx-background-color: #00796B; -fx-background-radius: 10;">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="66.0" layoutY="19.0" prefHeight="27.0" prefWidth="137.0">
+                           <children>
+                              <Label style="-fx-font-size: 12; -fx-text-fill: #070707;" text="Tpi Tip" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="334.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="208.0" layoutY="19.0" prefHeight="27.0" prefWidth="117.0">
+                           <children>
+                              <Label style="-fx-font-size: 12; -fx-text-fill: #070707;" text="I00-001" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="454.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="335.0" layoutY="19.0" prefHeight="27.0" prefWidth="107.0">
+                           <children>
+                              <Label style="-fx-font-size: 12; -fx-text-fill: #070707;" text="Savouries" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="574.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="454.0" layoutY="19.0" prefHeight="27.0" prefWidth="77.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="21.0" style="-fx-font-size: 12; -fx-text-fill: #070707;" text="200" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="658.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="540.0" layoutY="20.0" prefHeight="27.0" prefWidth="58.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="22.0" style="-fx-font-size: 12; -fx-text-fill: #070707;" text="200" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="729.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <HBox alignment="CENTER" layoutX="614.0" layoutY="21.0" prefHeight="27.0" prefWidth="69.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="24.0" style="-fx-font-size: 12; -fx-text-fill: #070707;" text="250" />
+                           </children>
+                        </HBox>
+                        <Line endX="-127.0" endY="24.0" layoutX="812.0" layoutY="29.0" startX="-127.0" startY="-15.0" />
+                        <JFXButton layoutX="695.0" layoutY="19.0" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: #1C1C1C;" text="Delete" textFill="#b8b8b8">
+                           <font>
+                              <Font name="Tw Cen MT Condensed Extra Bold" size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="52.0" fitWidth="46.0" layoutX="14.0" layoutY="7.0">
+                           <image>
+                              <Image url="@../Assets/5_3b49d90f-a342-4b44-9190-86a51a0bcb78_1024x1024.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+         </content>
+      </ScrollPane>
+      <AnchorPane fx:id="AddImageAnchorPane" layoutX="222.0" layoutY="181.0" onMouseClicked="#OpenImageFinder" prefHeight="146.0" prefWidth="144.0" style="-fx-border-color: #AEAEAE; -fx-background-color: #E9E9E9;">
+         <children>
+            <ImageView fx:id="ItemImageVIewer" fitHeight="66.0" fitWidth="58.0" layoutX="41.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/2x/outline_add_a_photo_black_24dp.png" />
+               </image>
+            </ImageView>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane" layoutX="62.0" layoutY="397.0" prefHeight="42.0" prefWidth="340.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="ItemCode" layoutX="13.0" layoutY="8.0" onKeyReleased="#ValidateFiields" prefHeight="28.0" prefWidth="339.0" promptText="C00-001" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Item Code*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane1" layoutX="62.0" layoutY="527.0" prefHeight="42.0" prefWidth="340.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="ItemCategory" layoutX="13.0" layoutY="8.0" onKeyReleased="#ValidateFiields" prefHeight="28.0" prefWidth="339.0" promptText="Meat" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Category*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane11" layoutX="62.0" layoutY="644.0" prefHeight="42.0" prefWidth="180.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="ItemUnit" layoutX="13.0" layoutY="8.0" onKeyReleased="#ValidateFiields" prefHeight="28.0" prefWidth="175.0" promptText="kg / Pckt" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Unit*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane111" layoutX="66.0" layoutY="705.0" prefHeight="42.0" prefWidth="180.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="ItemBuyingPrice" layoutX="13.0" layoutY="8.0" onKeyReleased="#ValidateFiields" prefHeight="28.0" prefWidth="175.0" promptText="100" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Buying Price*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane1111" layoutX="280.0" layoutY="705.0" prefHeight="42.0" prefWidth="180.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="ItemSellingPrice" layoutX="13.0" layoutY="8.0" onKeyReleased="#ValidateFiields" prefHeight="28.0" prefWidth="175.0" promptText="150" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Selling Price*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane2" layoutX="62.0" layoutY="457.0" prefHeight="42.0" prefWidth="340.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="ItemNameOrDesc" layoutX="13.0" layoutY="8.0" onKeyReleased="#ValidateFiields" prefHeight="42.0" prefWidth="502.0" promptText="Maliban Biscuit" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Item Name / Item Description*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane3" layoutX="63.0" layoutY="584.0" prefHeight="42.0" prefWidth="164.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="ItemQty" layoutX="3.0" layoutY="8.0" onKeyReleased="#ValidateFiields" prefHeight="28.0" prefWidth="190.0" promptText="100" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Available Qty*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Separator layoutX="619.0" layoutY="78.0" orientation="VERTICAL" prefHeight="831.0" prefWidth="16.0" />
+      <Separator layoutX="1235.0" layoutY="77.0" orientation="VERTICAL" prefHeight="831.0" prefWidth="16.0" />
+      <AnchorPane layoutX="1460.0" layoutY="184.0" onMouseClicked="#updateItemPicture" prefHeight="146.0" prefWidth="144.0" style="-fx-border-color: #AEAEAE; -fx-background-color: #E9E9E9;">
+         <children>
+            <ImageView fitHeight="66.0" fitWidth="58.0" layoutX="41.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/2x/outline_add_a_photo_black_24dp.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="UpdateItemImage" fitHeight="146.0" fitWidth="144.0" layoutX="-2.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane4" layoutX="1300.0" layoutY="400.0" prefHeight="42.0" prefWidth="340.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="UPItemCode" layoutX="13.0" layoutY="8.0" onAction="#SearchSpecificItemOnACtion" onKeyReleased="#UpdateVaildation" prefHeight="28.0" prefWidth="339.0" promptText="C00-001" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Item Code*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane12" layoutX="1300.0" layoutY="530.0" prefHeight="42.0" prefWidth="340.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="UPItemCategory" layoutX="13.0" layoutY="8.0" onKeyReleased="#UpdateVaildation" prefHeight="28.0" prefWidth="339.0" promptText="Meat" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Category*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane112" layoutX="1300.0" layoutY="647.0" prefHeight="42.0" prefWidth="180.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="UPItemUnit" layoutX="13.0" layoutY="8.0" onKeyReleased="#UpdateVaildation" prefHeight="28.0" prefWidth="175.0" promptText="kg / Pckt" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Unit*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane1112" layoutX="1304.0" layoutY="708.0" prefHeight="42.0" prefWidth="180.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="UpItemBuyingPrice" layoutX="13.0" layoutY="8.0" onKeyReleased="#UpdateVaildation" prefHeight="28.0" prefWidth="175.0" promptText="100" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Buying Price*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane11111" layoutX="1518.0" layoutY="708.0" prefHeight="42.0" prefWidth="180.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="UPItemSellingPrice" layoutX="13.0" layoutY="8.0" onKeyReleased="#UpdateVaildation" prefHeight="28.0" prefWidth="175.0" promptText="150" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Selling Price*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane21" layoutX="1300.0" layoutY="460.0" prefHeight="42.0" prefWidth="340.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="UPItemDesc" layoutX="13.0" layoutY="8.0" onKeyReleased="#UpdateVaildation" prefHeight="42.0" prefWidth="502.0" promptText="Maliban Biscuit" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Item Name / Item Description*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane31" layoutX="1301.0" layoutY="587.0" prefHeight="42.0" prefWidth="164.0" style="-fx-border-color: #446E69; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="UPAvailableQty" layoutX="13.0" layoutY="8.0" onKeyReleased="#UpdateVaildation" prefHeight="28.0" prefWidth="190.0" promptText="100" style="-fx-border-color: White; -fx-background-color: White;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: White;" styleClass="textLabel" text="Available Qty*" textFill="#838383">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane5" layoutX="15.0" layoutY="3.0" prefHeight="42.0" prefWidth="602.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #E8E6E8;" styleClass="textPane">
+         <children>
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="595.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="128.0" text="ADD ITEM" textFill="#4a4343">
+                     <font>
+                        <Font name="Tw Cen MT Condensed Extra Bold" size="31.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane51" layoutX="635.0" layoutY="3.0" prefHeight="42.0" prefWidth="585.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #E8E6E8;" styleClass="textPane">
+         <children>
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="595.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="128.0" text="VIEW ITEM" textFill="#4a4343">
+                     <font>
+                        <Font name="Tw Cen MT Condensed Extra Bold" size="31.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane511" layoutX="1255.0" layoutY="3.0" prefHeight="42.0" prefWidth="595.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #E8E6E8;" styleClass="textPane">
+         <children>
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="595.0">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="257.0" text="UPDATE/DELETE ITEM" textFill="#4a4343">
+                     <font>
+                        <Font name="Tw Cen MT Condensed Extra Bold" size="31.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <HBox alignment="CENTER" layoutX="1131.0" layoutY="63.0" prefHeight="27.0" prefWidth="37.0" />
+      <Label layoutX="250.0" layoutY="335.0" style="-fx-background-color: White;" styleClass="textLabel" text="Add Item Picture" textFill="#838383">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="1482.0" layoutY="337.0" style="-fx-background-color: White;" styleClass="textLabel" text="Update Item Picture" textFill="#838383">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

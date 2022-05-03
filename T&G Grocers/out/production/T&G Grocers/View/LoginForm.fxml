@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="MainPane" opacity="0.91" prefHeight="540.0" prefWidth="953.0" style="-fx-background-color: #FEFEFE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginFormController">
+    <children>
+      <ImageView fitHeight="548.0" fitWidth="953.0" layoutY="-7.0">
+         <image>
+            <Image url="@../Assets/top-view-vegetables-fruits-bag.jpg" />
+         </image>
+      </ImageView>
+        <JFXButton layoutX="603.0" layoutY="366.0" onAction="#loginOnAction" prefHeight="32.0" prefWidth="310.0" style="-fx-background-color: #899272;" text="LETŚ GO!">
+            <font>
+                <Font name="Arial Rounded MT Bold" size="14.0" />
+            </font>
+        </JFXButton>
+        <Text layoutX="298.0" layoutY="121.0" opacity="0.98" strokeType="OUTSIDE" strokeWidth="0.0">
+            <font>
+                <Font name="Bell MT Italic" size="47.0" />
+            </font>
+        </Text>
+        <Label layoutX="14.0" layoutY="515.0" text="VERSION 1.0.0">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="13.0" layoutY="6.0" text="T&amp;G">
+            <font>
+                <Font name="System Italic" size="23.0" />
+            </font>
+        </Label>
+        <Label layoutX="64.0" layoutY="7.0" text="GROCCERS">
+            <font>
+                <Font name="Arial Rounded MT Bold" size="25.0" />
+            </font>
+        </Label>
+      <ImageView fitHeight="74.0" fitWidth="112.0" layoutX="595.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/TNG.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="603.0" layoutY="407.0" onAction="#LogInAsAdminOnAction" prefHeight="34.0" prefWidth="310.0" style="-fx-background-color: #899272;" text="LOGIN AS ADMIN">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="600.0" layoutY="96.0" text="Welcome Back,">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="600.0" layoutY="128.0" text="Sign In To Continue.">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="IdPane" layoutX="596.0" layoutY="212.0" prefHeight="42.0" prefWidth="313.0" style="-fx-border-color: #AEAEAE; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <TextField fx:id="txtUserName" layoutX="13.0" layoutY="8.0" onAction="#nextFieldOnAction" prefHeight="28.0" prefWidth="310.0" promptText="Derick_Ferdinands" style="-fx-border-color: #F3F2F0; -fx-background-color: #F3F2F0;" styleClass="textField" />
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: #F3F2F0;" styleClass="textLabel" text="User_Name" textFill="#464545">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="IdPane1" layoutX="596.0" layoutY="284.0" prefHeight="42.0" prefWidth="319.0" style="-fx-border-color: #AEAEAE; -fx-background-radius: 5; -fx-border-radius: 5;" styleClass="textPane">
+         <children>
+            <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: #F3F2F0;" styleClass="textLabel" text="Password" textFill="#464545">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXPasswordField fx:id="txtPassword" focusColor="#405aa800" layoutX="14.0" layoutY="9.0" prefHeight="25.0" prefWidth="300.0" promptText="••••••••••" unFocusColor="#4d4d4d00" />
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>
